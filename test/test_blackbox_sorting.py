@@ -2,8 +2,8 @@ import pytest
 import pytest_html
 import random
 from random import randint
-from code.quicksort import quick_sort
-from code.bubblesort import bubble_sort
+from src.quicksort import quick_sort
+from src.bubblesort import bubble_sort
 import logging
 import sys
 import datetime
