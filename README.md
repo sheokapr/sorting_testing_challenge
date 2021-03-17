@@ -15,6 +15,6 @@ Instructions to Run the Python Testing Framework:\
 	7) Run this command to execute - Whitebox testing suite: pytest -v test_whitebox_quicksort.py  --html=Reports/Report.html  --durations=0\
 	8) Run this command to generate coverage report (html output): pytest  --cov   src   test_whitebox_quicksort.py    --cov-report html\
 	9) Run this command to execute - Blackbox testing suite: pytest -v test_blackbox_sorting.py  --html=Reports/Report.html  --durations=0\
-        10) Run this command to only execute Performance test suite:  pytest -v -m performance  --html=Reports/Report.html   --durations=0\
+        10) Run this command to only execute Performance test suite:  pytest -v -m performance  --html=Reports/Report.html   --durations=0
 
 
