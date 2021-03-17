@@ -1,1 +1,19 @@
 # sorting_testing_challenge
+
+Complete Solution Details are provided in the attached word document.
+[Assessment_Solution_Response.docx](https://github.com/sheokapr/sorting_testing_challenge/files/6156499/Assessment_Solution_Response.docx)
+
+
+Instructions to Run the Python Testing Framework;
+	1) Clone the GitHub Repo-  to your local directory
+	2) If not already installed, Install Python version > 3.5
+	3) Create a virtual env using this python command: pip install virtualenv and then python -m venv c:\path\to\myenv
+	4) Activate above virtual env: \path\to\myenv\Scripts\activate
+	5) Install dependencies using this command: pip install -r /path/to/requirements.txt
+	[requirements.txt](https://github.com/sheokapr/sorting_testing_challenge/files/6156492/requirements.txt)
+	6) Run this command to execute - Whitebox testing suite: pytest -v test_whitebox_quicksort.py  --html=Reports/Report.html  --durations=0
+	7) Run this command to generate coverage report (html output): pytest  --cov   src   test_whitebox_quicksort.py    --cov-report html
+	8) Run this command to execute - Blackbox testing suite: pytest -v test_blackbox_sort.py  --html=Reports/Report.html  --durations=0
+  9) Run this command to only execute Performance test suite:  pytest -v -m performance  --html=Reports/Report.html   --durations=0
+
+
