@@ -1,0 +1,240 @@
+
+(venv) C:\Users\prade\PycharmProjects\sorting\venv\test>pytest -vv sortalgo_blackbox_test.py --html=Reports/Report.html --durations=0
+======================================================================= test session starts ========================================================================
+platform win32 -- Python 3.8.6, pytest-6.2.2, py-1.10.0, pluggy-0.13.1 -- c:\users\prade\pycharmprojects\sorting\venv\scripts\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.8.6', 'Platform': 'Windows-10-10.0.19041-SP0', 'Packages': {'pytest': '6.2.2', 'py': '1.10.0', 'pluggy': '0.13.1'}, 'Plugins': {'cov': '2.11.
+1', 'html': '3.1.1', 'metadata': '1.11.0'}}
+rootdir: C:\Users\prade\PycharmProjects\sorting\venv\test, configfile: pytest.ini
+plugins: cov-2.11.1, html-3.1.1, metadata-1.11.0
+collected 18 items                                                                                                                                                  
+
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n0-expected0] PASSED                                                                                 [  5%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n1-expected1] PASSED                                                                                 [ 11%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n2-expected2] PASSED                                                                                 [ 16%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n3-expected3] PASSED                                                                                 [ 22%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n4-expected4] PASSED                                                                                 [ 27%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n5-expected5] PASSED                                                                                 [ 33%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n6-expected6] PASSED                                                                                 [ 38%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n7-expected7] PASSED                                                                                 [ 44%]
+sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n8-expected8] PASSED                                                                                 [ 50%]
+sortalgo_blackbox_test.py::test_sort_on_random_small_ints PASSED                                                                                              [ 55%]
+sortalgo_blackbox_test.py::test_sort_on_random_small_floats SKIPPED (Conditional test, don't run if python verson is more than 3.5)                           [ 61%]
+sortalgo_blackbox_test.py::test_sort_on_random_small_strings FAILED                                                                                           [ 66%]
+sortalgo_blackbox_test.py::test_sort_on_dict_by_keys FAILED                                                                                                   [ 72%]
+sortalgo_blackbox_test.py::test_sort_on_dict_by_value FAILED                                                                                                  [ 77%]
+sortalgo_blackbox_test.py::test_sort_on_random_tuple FAILED                                                                                                   [ 83%]
+sortalgo_blackbox_test.py::test_sort_on_mix_array FAILED                                                                                                      [ 88%]
+sortalgo_blackbox_test.py::test_sort_on_random_large_ints PASSED                                                                                              [ 94%]
+sortalgo_blackbox_test.py::test_sort_on_random_large_floats PASSED                                                                                            [100%]
+
+============================================================================= FAILURES =============================================================================
+________________________________________________________________ test_sort_on_random_small_strings _________________________________________________________________
+
+    def test_sort_on_random_small_strings():
+        items1 = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase) for _ in range(7)) #random choice function generates mix of up
+percase and lowercase strings, range function dictates the size of the string
+        print(items1)
+        sorted_items = sorted(items1) #sorted() function is python in-built sorting function
+>       assert sort(items1) == sorted_items #comparing the output of sort algorithm versus output of python built-in sorting function
+
+sortalgo_blackbox_test.py:79:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+collection = 'yTGKSJB'
+
+    def quick_sort(collection: list) -> list:
+        """A pure Python implementation of quick sort algorithm
+        :param collection: a mutable collection of comparable items
+        :return: the same collection ordered by ascending
+        Examples:
+        >>> quick_sort([0, 5, 3, 2, 2])
+        [0, 2, 2, 3, 5]
+        >>> quick_sort([])
+        []
+        >>> quick_sort([-2, 5, 0, -45])
+        [-45, -2, 0, 5]
+        """
+        if len(collection) < 2:
+            return collection
+>       pivot = collection.pop()  # Use the last element as the first pivot
+E       AttributeError: 'str' object has no attribute 'pop'
+
+..\src\quicksort.py:26: AttributeError
+----------------------------------------------------------------------- Captured stdout call -----------------------------------------------------------------------
+yTGKSJB
+____________________________________________________________________ test_sort_on_dict_by_keys _____________________________________________________________________
+
+    def test_sort_on_dict_by_keys():
+        d = {'one':1,'three':3,'five':5,'two':2,'four':4}  #sample dictionary to be sorted by its keys
+        a = [(key, " :: ", value) for (key, value) in sorted(d.items())] #sorting of this dictionary by python built-in sorting() function
+        print(a)
+>       b = [(key, " :: ", value) for (key, value) in sort(d.items())] #sorting of this dictionary by chosen sort algorithm
+
+sortalgo_blackbox_test.py:94:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+collection = dict_items([('one', 1), ('three', 3), ('five', 5), ('two', 2), ('four', 4)])
+
+    def quick_sort(collection: list) -> list:
+        """A pure Python implementation of quick sort algorithm
+        :param collection: a mutable collection of comparable items
+        :return: the same collection ordered by ascending
+        Examples:
+        >>> quick_sort([0, 5, 3, 2, 2])
+        [0, 2, 2, 3, 5]
+        >>> quick_sort([])
+        []
+        >>> quick_sort([-2, 5, 0, -45])
+        [-45, -2, 0, 5]
+        """
+        if len(collection) < 2:
+            return collection
+>       pivot = collection.pop()  # Use the last element as the first pivot
+E       AttributeError: 'dict_items' object has no attribute 'pop'
+
+..\src\quicksort.py:26: AttributeError
+----------------------------------------------------------------------- Captured stdout call -----------------------------------------------------------------------
+[('five', ' :: ', 5), ('four', ' :: ', 4), ('one', ' :: ', 1), ('three', ' :: ', 3), ('two', ' :: ', 2)]
+____________________________________________________________________ test_sort_on_dict_by_value ____________________________________________________________________
+
+    def test_sort_on_dict_by_value():
+        d = {'one':1,'three':3,'five':5,'two':2,'four':4} #sample dictionary to be sorted by its values
+        a = sorted(d.items(), key=lambda x: x[1]) #sorting of this dictionary by python built-in sorting() function
+        print(a)
+>       b = sort(d.items(), key=lambda x: x[1])
+E       TypeError: quick_sort() got an unexpected keyword argument 'key'
+
+sortalgo_blackbox_test.py:109: TypeError
+----------------------------------------------------------------------- Captured stdout call -----------------------------------------------------------------------
+[('one', 1), ('two', 2), ('three', 3), ('four', 4), ('five', 5)]
+____________________________________________________________________ test_sort_on_random_tuple _____________________________________________________________________
+
+    def test_sort_on_random_tuple():
+        items1 = tuple(random.randint(-10,20) for i in range(50)) #generating tuple using random function
+        print(items1)
+        sorted_items = sorted(items1)  #sorting of this dictionary by python built-in sorting() function
+>       assert sort(items1) == sorted_items #comparing the output of sort algorithm versus output of python built-in sorting function
+
+sortalgo_blackbox_test.py:125:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+collection = (3, 5, 15, 2, 4, 8, ...)
+
+    def quick_sort(collection: list) -> list:
+        """A pure Python implementation of quick sort algorithm
+        :param collection: a mutable collection of comparable items
+        :return: the same collection ordered by ascending
+        Examples:
+        >>> quick_sort([0, 5, 3, 2, 2])
+        [0, 2, 2, 3, 5]
+        >>> quick_sort([])
+        []
+        >>> quick_sort([-2, 5, 0, -45])
+        [-45, -2, 0, 5]
+        """
+        if len(collection) < 2:
+            return collection
+>       pivot = collection.pop()  # Use the last element as the first pivot
+E       AttributeError: 'tuple' object has no attribute 'pop'
+
+..\src\quicksort.py:26: AttributeError
+----------------------------------------------------------------------- Captured stdout call -----------------------------------------------------------------------
+(3, 5, 15, 2, 4, 8, 8, 12, -6, 18, 8, 12, 11, 5, 1, -9, 6, -7, 17, 1, -6, -6, 11, -10, 12, 8, 9, 18, -7, -8, 11, 3, 9, -3, 17, 9, 8, 10, -5, -5, -10, -3, 16, 1, -8,
+16, -2, 8, 11, 3)
+______________________________________________________________________ test_sort_on_mix_array ______________________________________________________________________
+
+    def test_sort_on_mix_array():
+        items1 = ['b',2,'c',1,'a']
+        expected = [1,2,'a','b','c']
+>       assert sort(items1) == expected
+
+sortalgo_blackbox_test.py:136:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+collection = ['b', 2, 'c', 1]
+
+    def quick_sort(collection: list) -> list:
+        """A pure Python implementation of quick sort algorithm
+        :param collection: a mutable collection of comparable items
+        :return: the same collection ordered by ascending
+        Examples:
+        >>> quick_sort([0, 5, 3, 2, 2])
+        [0, 2, 2, 3, 5]
+        >>> quick_sort([])
+        []
+        >>> quick_sort([-2, 5, 0, -45])
+        [-45, -2, 0, 5]
+        """
+        if len(collection) < 2:
+            return collection
+        pivot = collection.pop()  # Use the last element as the first pivot
+        greater: List[int] = []  # All elements greater than pivot
+        lesser: List[int] = []  # All elements less than or equal to pivot
+        for element in collection:
+>           (greater if element > pivot else lesser).append(element)
+E           TypeError: '>' not supported between instances of 'int' and 'str'
+
+..\src\quicksort.py:30: TypeError
+--------------------------------- generated html file: file://C:\Users\prade\PycharmProjects\sorting\venv\test\Reports\Report.html ---------------------------------
+======================================================================== slowest durations =========================================================================
+0.13s call     sortalgo_blackbox_test.py::test_sort_on_random_large_ints
+0.12s call     sortalgo_blackbox_test.py::test_sort_on_random_large_ints
+0.11s call     sortalgo_blackbox_test.py::test_sort_on_random_large_floats
+0.11s call     sortalgo_blackbox_test.py::test_sort_on_random_large_floats
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_small_ints
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_small_strings
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_tuple
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_dict_by_keys
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n0-expected0]
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_dict_by_value
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_mix_array
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n3-expected3]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n2-expected2]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n7-expected7]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n6-expected6]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n4-expected4]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n5-expected5]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n8-expected8]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n1-expected1]
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_small_ints
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n0-expected0]
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_small_strings
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_small_floats
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_random_tuple
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n3-expected3]
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_dict_by_value
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_dict_by_keys
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_mix_array
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n6-expected6]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n7-expected7]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n1-expected1]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n4-expected4]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n8-expected8]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n5-expected5]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n2-expected2]
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_dict_by_value
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_dict_by_keys
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_random_small_strings
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_random_large_floats
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_random_large_ints
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_random_tuple
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n0-expected0]
+0.00s call     sortalgo_blackbox_test.py::test_sort_on_mix_array
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_random_small_ints
+0.00s setup    sortalgo_blackbox_test.py::test_sort_on_random_small_floats
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n3-expected3]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n7-expected7]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n6-expected6]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n8-expected8]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n4-expected4]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n1-expected1]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n5-expected5]
+0.00s call     sortalgo_blackbox_test.py::test_sort_generic_basic_tests[n2-expected2]
+===================================================================== short test summary info ======================================================================
+FAILED sortalgo_blackbox_test.py::test_sort_on_random_small_strings - AttributeError: 'str' object has no attribute 'pop'
+FAILED sortalgo_blackbox_test.py::test_sort_on_dict_by_keys - AttributeError: 'dict_items' object has no attribute 'pop'
+FAILED sortalgo_blackbox_test.py::test_sort_on_dict_by_value - TypeError: quick_sort() got an unexpected keyword argument 'key'
+FAILED sortalgo_blackbox_test.py::test_sort_on_random_tuple - AttributeError: 'tuple' object has no attribute 'pop'
+FAILED sortalgo_blackbox_test.py::test_sort_on_mix_array - TypeError: '>' not supported between instances of 'int' and 'str'
+============================================================= 5 failed, 12 passed, 1 skipped in 0.43s ==============================================================
