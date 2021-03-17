@@ -22,5 +22,5 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest --cov code test/test_whitebox_quicksort.py
+            pytest --cov src test/test_whitebox_quicksort.py
             pytest -v test/test_whitebox_quicksort.py
