@@ -8,7 +8,7 @@ Instructions to Run the Python Testing Framework:\
 	1) Clone the GitHub Repo:  https://github.com/sheokapr/sorting_testing_challenge  to your local directory\
 	2) If not already installed, Install Python version > 3.5\
 	3) Create a virtual env using this python command: python -m venv c:\path\to\myenv\
-	4) Activate above virtual env: \path\to\myenv\Scripts\activate
+	4) Activate above virtual env: \path\to\myenv\Scripts\activate\
 	5) Install dependencies using this command (requirements.txt file below has complete dependencies for this project): pip install -r /path/to/requirements.txt\
 	[requirements.txt](https://github.com/sheokapr/sorting_testing_challenge/files/6156492/requirements.txt)\
 	6) Run this command to execute - Whitebox testing suite: pytest -v test_whitebox_quicksort.py  --html=Reports/Report.html  --durations=0\
