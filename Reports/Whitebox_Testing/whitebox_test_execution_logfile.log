@@ -1,0 +1,32 @@
+(venv) C:\Users\prade\PycharmProjects\sorting\venv\test>pytest --cov src quicksort_test.py --html=Reports/Report.html  --self-contained-html
+======================================================================= test session starts ========================================================================
+platform win32 -- Python 3.8.6, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\prade\PycharmProjects\sorting\venv\test, configfile: pytest.ini
+plugins: cov-2.11.1, html-3.1.1, metadata-1.11.0
+collected 14 items                                                                                                                                                  
+
+quicksort_test.py::test_quicksort_positive_int[items0-expected0] PASSED                                                                                       [  7%]
+quicksort_test.py::test_quicksort_empty_list[items0-expected0] PASSED                                                                                         [ 14%]
+quicksort_test.py::test_sorting_on_null PASSED                                                                                                                [ 21%]
+quicksort_test.py::test_quicksort_repeated_int[items0-expected0] PASSED                                                                                       [ 28%]
+quicksort_test.py::test_quicksort_postive_negative_int[items0-expected0] PASSED                                                                               [ 35%]
+quicksort_test.py::test_quicksort_negative_int[items0-expected0] PASSED                                                                                       [ 42%]
+quicksort_test.py::test_quicksort_float_int_mixed[items0-expected0] PASSED                                                                                    [ 50%]
+quicksort_test.py::test_quicksort_float_int_negative_positive_mixed[items0-expected0] PASSED                                                                  [ 57%]
+quicksort_test.py::test_quicksort_strings[items0-expected0] PASSED                                                                                            [ 64%]
+quicksort_test.py::test_quicksort_repeated_strings[items0-expected0] PASSED                                                                                   [ 71%]
+quicksort_test.py::test_quicksort_strings_words[items0-expected0] PASSED                                                                                      [ 78%]
+quicksort_test.py::test_quicksort_on_random_tuple XFAIL                                                                                                       [ 85%]
+quicksort_test.py::test_sort_on_random_string XFAIL                                                                                                           [ 92%]
+quicksort_test.py::test_sort_on_mix_elements XFAIL                                                                                                            [100%]
+
+--------------------------------- generated html file: file://C:\Users\prade\PycharmProjects\sorting\venv\test\Reports\Report.html ---------------------------------
+
+----------- coverage: platform win32, python 3.8.6-final-0 -----------
+Name                                                           Stmts   Miss  Cover
+----------------------------------------------------------------------------------
+C:\Users\prade\PycharmProjects\sorting\venv\src\quicksort.py      11      0   100%
+----------------------------------------------------------------------------------
+TOTAL                                                             11      0   100%
+
+================================================================== 11 passed, 3 xfailed in 0.15s ===================================================================
