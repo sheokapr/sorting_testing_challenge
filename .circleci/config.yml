@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/python:3.7
 
-    working_directory: ~/repo
+    working_directory: test/
 
     steps:
       # Step 1: obtain repo from GitHub
@@ -22,5 +22,5 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest --cov code test/test_whitebox_quicksort.py
-            pytest -v test/test_whitebox_quicksort.py
+            pytest --cov code test_whitebox_quicksort.py
+            pytest -v test_whitebox_quicksort.py
