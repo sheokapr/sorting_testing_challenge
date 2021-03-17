@@ -1,7 +1,7 @@
 # sorting_testing_challenge
 
-Complete Solution Details are provided in the attached word document.
-[Assessment_Solution_Response.docx](https://github.com/sheokapr/sorting_testing_challenge/files/6156499/Assessment_Solution_Response.docx)
+Complete Solution Details are provided in the attached confluence link.
+https://pradeepsheokand.atlassian.net/wiki/spaces/DEVQA/pages/196632/Test+Engineer+Take+Home+Assessment+Solution
 
 
 Instructions to Run the Python Testing Framework:\
