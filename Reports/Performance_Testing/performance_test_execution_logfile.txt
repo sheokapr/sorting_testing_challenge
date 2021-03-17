@@ -1,0 +1,16 @@
+(venv) C:\Users\prade\PycharmProjects\sorting\venv\test>pytest -v -m performance --html=Reports/Report.html
+======================================================================= test session starts ========================================================================
+platform win32 -- Python 3.8.6, pytest-6.2.2, py-1.10.0, pluggy-0.13.1 -- c:\users\prade\pycharmprojects\sorting\venv\scripts\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.8.6', 'Platform': 'Windows-10-10.0.19041-SP0', 'Packages': {'pytest': '6.2.2', 'py': '1.10.0', 'pluggy': '0.13.1'}, 'Plugins': {'cov': '2.11.
+1', 'html': '3.1.1', 'metadata': '1.11.0'}}
+rootdir: C:\Users\prade\PycharmProjects\sorting\venv\test, configfile: pytest.ini
+plugins: cov-2.11.1, html-3.1.1, metadata-1.11.0
+collected 31 items / 29 deselected / 2 selected                                                                                                                     
+
+sortalgo_blackbox_test.py::test_sort_on_random_large_ints PASSED                                                                                              [ 50%]
+sortalgo_blackbox_test.py::test_sort_on_random_large_floats PASSED                                                                                            [100%]
+
+--------------------------------- generated html file: file://C:\Users\prade\PycharmProjects\sorting\venv\test\Reports\Report.html ---------------------------------
+================================================================= 2 passed, 29 deselected in 0.29s =================================================================
+
