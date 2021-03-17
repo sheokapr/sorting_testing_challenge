@@ -1,6 +1,6 @@
 #!python
 import pytest
-from code.quicksort import quick_sort
+from src.quicksort import quick_sort
 import random
 import string
 
